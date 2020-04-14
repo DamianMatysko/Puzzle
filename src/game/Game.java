@@ -31,18 +31,14 @@ public class Game {
     }
 
     public void swap(int x,int y,int x2,int y2) {
-        int swap=array[x][y];
-        array[x][y]=array[x2][y2];
-        array[x2][y2]=swap;
-    }
-
-    public boolean isSwapPossible(int code) {
-        
-        int x=code % 4; // row
-        int y=code / 4;//colum
-
-        if (!((j==x)&&(i==y))&&(Math.abs(j-x)==0||Math.abs(j-x)==1)&&(Math.abs(i-y)==0||Math.abs(i-y)==1)){
-
+        if ((x==x2+1&&y==y2)||(x==x2-1&&y==y2)||(x==x2&&y==y2+1)||(x==x2&&y==y2-1)||(x==x2+1&&y==y2+1)||(x==x2-1&&y==y2-1)||(x==x2+1&&y==y2-1)||(x==x2-1&&y==y2+1)) {
+            int swap = array[x][y];
+            array[x][y] = array[x2][y2];
+            array[x2][y2] = swap;
+        }else {
+            System.out.println("You cant move this number!!");
         }
     }
+
+
 }
